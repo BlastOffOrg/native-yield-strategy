@@ -9,7 +9,8 @@ contract Deploy is Script {
     Deployer public deployer =
         Deployer(0xba5Ed099633D3B313e4D5F7bdc1305d3c28ba5Ed);
 
-    // Vault factory address for v3.0.2
+    // Vault factory address for v1.0.0
+    // TODO: change this after deploying factory
     address public factory = 0x444045c5C13C246e117eD36437303cac8E250aB0;
 
     function run() external {
@@ -23,7 +24,7 @@ contract Deploy is Script {
         );
 
         // Pick an unique salt
-        bytes32 salt = keccak256("v3.0.2");
+        bytes32 salt = keccak256("Native Yield Strategy v1.0.0");
 
         address contractAddress = deployer.deployCreate2(salt, bytecode);
 
