@@ -30,7 +30,7 @@ interface IERC20Rebasing is IERC20 {
 
 contract NativeYieldStrategy is BaseStrategy {
     constructor(address weth) BaseStrategy(weth, "Native ETH Yield") {
-      IERC20Rebasing(weth).configure(RebaseYieldMode.AUTOMATIC);
+        IERC20Rebasing(weth).configure(RebaseYieldMode.AUTOMATIC);
     }
 
     function _deployFunds(uint256 _amount) internal virtual override {}
